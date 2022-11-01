@@ -30,7 +30,7 @@ public class CassandraConnector {
         cluster.close();
     }
 
-    public List<Article> findLast10ArticlesSummaries(String userId) {
+    public List<ArticleSummary> findLast10ArticlesSummaries(String userId) {
         // TODO
         return null;
     }
