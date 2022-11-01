@@ -11,12 +11,18 @@ Create docker (and running it) : ```docker run -p 9042:9042 -d --name cassandra 
 
 # Access cassandra with another docker
 
-Create docker : ```docker run --name=mySqlAccess -d mysql/mysql-server:latest``` <br>
-Get logs of docker : ```docker logs mySqlAccess``` <br>
-Get root's password generated : <br>![img.png](images/img.png) <br>
-Get bash of docker : ```docker exec -it mySqlAccess bash``` <br>
-Access to mysql commands (insert password when asked) : ```mysql -uroot -p``` <br>
-Change password if needed : ```ALTER USER 'root'@'localhost' IDENTIFIED BY '[newpassword]';``` <br>
+Create temporary docker (and running it) : ```docker run --rm -it --network cassandra nuvo/docker-cqlsh cqlsh cassandra 9042 --cqlversion='3.4.5'``` <br>
+
+# Create main config in database
+
+Create keyspace : ```CREATE KEYSPACE IF NOT EXISTS rss WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : '1' };``` <br>
+Create table : ```CREATE TABLE IF NOT EXISTS rss.article (
+id text PRIMARY KEY,
+title text,
+pubDate text,
+description text,
+link text
+);``` <br>
 
 # Commands to clean docker and network
 
