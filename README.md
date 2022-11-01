@@ -13,7 +13,7 @@ Create docker (and running it) : ```docker run -p 9042:9042 -d --name cassandra 
 
 Create docker : ```docker run --name=mySqlAccess -d mysql/mysql-server:latest``` <br>
 Get logs of docker : ```docker logs mySqlAccess``` <br>
-Get root's password generated : ![img.png](images/img.png)
+Get root's password generated : ![img.png](images/img.png) <br>
 Get bash of docker : ```docker exec -it mySqlAccess bash``` <br>
 Access to mysql commands (insert password when asked) : ```mysql -uroot -p``` <br>
 Change password if needed : ```ALTER USER 'root'@'localhost' IDENTIFIED BY '[newpassword]';``` <br>
