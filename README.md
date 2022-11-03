@@ -12,6 +12,7 @@ Create docker (and running it) : ```docker run -p 9042:9042 -d --name cassandra 
 # Access cassandra with another docker
 
 Create temporary docker (and running it) : ```docker run --rm -it --network cassandra nuvo/docker-cqlsh cqlsh cassandra 9042 --cqlversion='3.4.5'``` <br>
+And create keyspace : ```CREATE KEYSPACE IF NOT EXISTS rss WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : '1' };```
 
 # Commands to clean docker and network
 
