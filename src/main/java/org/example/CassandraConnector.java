@@ -30,11 +30,41 @@ public class CassandraConnector {
         cluster.close();
     }
 
-    public void createKeySpace() {
+    private void checkSession() {
         if (session == null) {
             throw new IllegalStateException("Need to be connected : use connect() method first");
         }
+    }
+
+    public void createKeySpace() {
+        checkSession();
         this.session.execute("CREATE KEYSPACE IF NOT EXISTS rss WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : '1' };");
+    }
+
+    public void removeTables() {
+        checkSession();
+        this.session.execute("DROP TABLE IF EXISTS rss.article_by_id");
+        this.session.execute("DROP TABLE IF EXISTS rss.article_by_userId");
+    }
+
+    public void createTables() {
+        checkSession();
+        this.session.execute("CREATE TABLE IF NOT EXISTS rss.article_by_id ( " +
+                                "id text PRIMARY KEY," +
+                                "title text," +
+                                "pubDate text," +
+                                "description text," +
+                                "link text " +
+                                ");");
+        this.session.execute("CREATE TABLE IF NOT EXISTS rss.article_by_userId ( " +
+                                "id text," +
+                                "title text," +
+                                "pubDate text," +
+                                "description text," +
+                                "link text " +
+                                "userId text" +
+                                "PRIMARY KEY((userId, id), pubDate)" +
+                                ");");
     }
 
     public List<ArticleSummary> findLast10ArticlesSummaries(String userId) {
