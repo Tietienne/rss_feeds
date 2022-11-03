@@ -1,4 +1,4 @@
-package org.example;
+package bdd.bigdata.rss_feeds;
 
 public class Main {
     public static void main(String[] args) {

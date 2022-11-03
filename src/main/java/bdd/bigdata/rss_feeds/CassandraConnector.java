@@ -1,4 +1,4 @@
-package org.example;
+package bdd.bigdata.rss_feeds;
 
 import com.datastax.driver.core.*;
 
