@@ -30,6 +30,13 @@ public class CassandraConnector {
         cluster.close();
     }
 
+    public void createKeySpace() {
+        if (session == null) {
+            throw new IllegalStateException("Need to be connected : use connect() method first");
+        }
+        this.session.execute("CREATE KEYSPACE IF NOT EXISTS rss WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : '1' };");
+    }
+
     public List<ArticleSummary> findLast10ArticlesSummaries(String userId) {
         // TODO
         return null;
