@@ -1,7 +1,6 @@
 package org.example;
 
-import com.datastax.driver.core.Cluster;
-import com.datastax.driver.core.Session;
+import com.datastax.driver.core.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -73,8 +72,12 @@ public class CassandraConnector {
     }
 
     public Optional<Article> findOneArticle(String article_id) {
-        // TODO
-        return Optional.empty();
+        PreparedStatement prepared = session.prepare("SELECT * FROM rss.article_by_id" +
+                                                        "WHERE id = ?;");
+        ResultSet result = session.execute(prepared.bind(article_id));
+        Row row = result.one();
+
+        return Optional.of(new Article(row.getString("id"), row.getString("title"), row.getString("pubDate"), row.getString("description"), row.getString("link")));
     }
 
     public void saveArticles(List<Article> articles) {
