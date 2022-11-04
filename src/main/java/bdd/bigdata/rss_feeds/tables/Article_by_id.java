@@ -1,4 +1,4 @@
-package bdd.bigdata.rss_feeds;
+package bdd.bigdata.rss_feeds.tables;
 
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;

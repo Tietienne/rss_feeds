@@ -8,7 +8,10 @@ import org.springframework.data.cassandra.config.SchemaAction;
 public class CassandraConfig extends AbstractCassandraConfiguration {
     private static final String KEYSPACE = "rss";
 
-
+    /**
+     * Creating tables if they don't exist
+     * @return
+     */
     @Override
     public SchemaAction getSchemaAction() {
         return SchemaAction.CREATE_IF_NOT_EXISTS;
