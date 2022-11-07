@@ -55,11 +55,15 @@ public class CassandraController {
 
     @PostMapping("/articles")
     public ResponseEntity<String> saveArticles(@RequestBody List<ArticleFromScraper> articles) {
-        /*for (var article : articles) {
+        for (var article : articles) {
             var uuid = UUID.randomUUID();
             articleByIdRepository.insert(article.toArticle_by_id(uuid));
-            useridByLinkRepository.findById(article.getLink());
-        }*/
+            var links = new ArrayList<String>();
+            links.add(article.getLink());
+            var users = useridByLinkRepository.findAllById(links); // Error on this line : TODO : fix
+            System.out.println(users.size()); // For debug
+            // TODO : for each user, insert line in Article_by_userId
+        }
         return new ResponseEntity<>("Done", HttpStatus.OK);
     }
 

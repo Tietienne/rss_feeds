@@ -15,6 +15,10 @@ public class Userid_by_link {
     @PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.CLUSTERED)
     private final String userId;
 
+    public String getUserId() {
+        return userId;
+    }
+
     public Userid_by_link(String link, String userId) {
         Objects.requireNonNull(link);
         Objects.requireNonNull(userId);

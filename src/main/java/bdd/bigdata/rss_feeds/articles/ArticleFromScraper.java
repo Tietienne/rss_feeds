@@ -13,6 +13,10 @@ public class ArticleFromScraper {
     private final String description;
     private final String link;
 
+    public String getLink() {
+        return link;
+    }
+
     public ArticleFromScraper(String id, String title, Date pubDate, String description, String link) {
         Objects.requireNonNull(id);
         Objects.requireNonNull(title);
