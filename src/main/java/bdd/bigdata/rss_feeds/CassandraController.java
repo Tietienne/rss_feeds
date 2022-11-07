@@ -1,5 +1,6 @@
 package bdd.bigdata.rss_feeds;
 
+import bdd.bigdata.rss_feeds.articles.ArticleFromScraper;
 import bdd.bigdata.rss_feeds.articles.ArticleSummary;
 import bdd.bigdata.rss_feeds.tables.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,8 +54,12 @@ public class CassandraController {
     }
 
     @PostMapping("/articles")
-    public ResponseEntity<String> saveArticles(@RequestBody List<Article_by_id> articles) {
-        //TODO
+    public ResponseEntity<String> saveArticles(@RequestBody List<ArticleFromScraper> articles) {
+        /*for (var article : articles) {
+            var uuid = UUID.randomUUID();
+            articleByIdRepository.insert(article.toArticle_by_id(uuid));
+            useridByLinkRepository.findById(article.getLink());
+        }*/
         return new ResponseEntity<>("Done", HttpStatus.OK);
     }
 
