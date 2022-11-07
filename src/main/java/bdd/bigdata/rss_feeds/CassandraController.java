@@ -1,10 +1,7 @@
 package bdd.bigdata.rss_feeds;
 
 import bdd.bigdata.rss_feeds.articles.ArticleSummary;
-import bdd.bigdata.rss_feeds.tables.ArticleByIdRepository;
-import bdd.bigdata.rss_feeds.tables.ArticleByUserIdRepository;
-import bdd.bigdata.rss_feeds.tables.Article_by_id;
-import bdd.bigdata.rss_feeds.tables.UseridByLinkRepository;
+import bdd.bigdata.rss_feeds.tables.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +35,7 @@ public class CassandraController {
         if (article.isPresent()) {
             return new ResponseEntity<>(article.get().toString(), HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Not Found", HttpStatus.OK);
         }
     }
 
@@ -58,6 +55,12 @@ public class CassandraController {
     @PostMapping("/articles")
     public ResponseEntity<String> saveArticles(@RequestBody List<Article_by_id> articles) {
         //TODO
+        return new ResponseEntity<>("Done", HttpStatus.OK);
+    }
+
+    @GetMapping("/subscribe/{user_id}")
+    public ResponseEntity<String> subscribeUserToLink(@PathVariable String user_id, @RequestParam String rss_link) {
+        useridByLinkRepository.insert(new Userid_by_link(rss_link, user_id));
         return new ResponseEntity<>("Done", HttpStatus.OK);
     }
 }
