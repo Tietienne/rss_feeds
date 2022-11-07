@@ -2,9 +2,11 @@ package bdd.bigdata.rss_feeds.tables;
 
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.util.Objects;
 
+@Table
 public class Userid_by_link {
     @PrimaryKey
     private final String link;
