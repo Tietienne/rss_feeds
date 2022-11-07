@@ -22,7 +22,7 @@ public class Article_by_userId {
     @PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.CLUSTERED, ordering = Ordering.DESCENDING)
     private final Date pubDate;
 
-    public Article_by_userId(UUID id, String guid, String userId, String title, Date pubDate) {
+    public Article_by_userId(UUID id, String userId, String title, Date pubDate) {
         Objects.requireNonNull(id);
         Objects.requireNonNull(userId);
         Objects.requireNonNull(title);

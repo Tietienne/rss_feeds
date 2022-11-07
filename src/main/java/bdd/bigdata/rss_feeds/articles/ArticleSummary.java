@@ -17,4 +17,13 @@ public class ArticleSummary {
         this.title = title;
         this.pubDate = pubDate;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", pubDate=" + pubDate +
+                '}';
+    }
 }

@@ -33,4 +33,15 @@ public class Article_by_id {
         this.description = description;
         this.link = link;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", pubDate=" + pubDate +
+                ", description='" + description + '\'' +
+                ", link='" + link + '\'' +
+                '}';
+    }
 }
