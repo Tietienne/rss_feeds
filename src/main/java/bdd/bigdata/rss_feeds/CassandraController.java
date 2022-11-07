@@ -40,8 +40,16 @@ public class CassandraController {
     @GetMapping("/articles")
     public ResponseEntity<List<ArticleSummary>> findLast10ArticlesSummaries(@RequestParam String userId) {
         // TODO
-        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.OK);
-
+        var allSummariesUser = articleByUserIdRepository.findAll();
+        var indexMax = articleByUserIdRepository.findAll().size()-1;
+        List<ArticleSummary> articleSummary = new ArrayList<>();
+        if(indexMax>9){
+            allSummariesUser.subList(indexMax-10,indexMax).forEach(article -> articleSummary.add(article.createArticleSummary()));
+        }
+        else{
+            allSummariesUser.forEach(article -> articleSummary.add(article.createArticleSummary()));
+        }
+        return new ResponseEntity<>(articleSummary, HttpStatus.OK);
     }
 
     @PostMapping("/articles")

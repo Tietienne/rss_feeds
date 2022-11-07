@@ -1,13 +1,15 @@
 package bdd.bigdata.rss_feeds.articles;
 
+import java.util.Date;
 import java.util.Objects;
+import java.util.UUID;
 
 public class ArticleSummary {
-    private final String id;
+    private final UUID id;
     private final String title;
-    private final String pubDate;
+    private final Date pubDate;
 
-    public ArticleSummary(String id, String title, String pubDate) {
+    public ArticleSummary(UUID id, String title, Date pubDate) {
         Objects.requireNonNull(id);
         Objects.requireNonNull(title);
         Objects.requireNonNull(pubDate);

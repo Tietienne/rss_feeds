@@ -4,22 +4,24 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import java.util.Date;
 import java.util.Objects;
+import java.util.UUID;
 
 @Table
 public class Article_by_id {
     @PrimaryKey
-    private final String id;
+    private final UUID id;
     @Column
     private final String title;
     @Column
-    private final String pubDate;
+    private final Date pubDate;
     @Column
     private final String description;
     @Column
-    private final String link;
+    private final String link;//flux rss
 
-    public Article_by_id(String id, String title, String pubDate, String description, String link) {
+    public Article_by_id(UUID id, String title, Date pubDate, String description, String link) {
         Objects.requireNonNull(id);
         Objects.requireNonNull(title);
         Objects.requireNonNull(pubDate);
