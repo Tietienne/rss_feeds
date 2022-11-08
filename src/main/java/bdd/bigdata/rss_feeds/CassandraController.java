@@ -43,12 +43,9 @@ public class CassandraController {
     @GetMapping("/articles")
     public ResponseEntity<String> findLast10ArticlesSummaries(@RequestParam String userId) {
         var allSummariesUser = articleByUserIdRepository.findAll();
-        var indexMax = articleByUserIdRepository.findAll().size()-1;
         List<ArticleSummary> articleSummary = new ArrayList<>();
-        if (indexMax>9) {
-            allSummariesUser.subList(indexMax-10,indexMax).forEach(article -> articleSummary.add(article.createArticleSummary()));
-        } else {
-            allSummariesUser.forEach(article -> articleSummary.add(article.createArticleSummary()));
+        for (var i = 0; i < Integer.min(10, allSummariesUser.size()); i++) {
+            articleSummary.add(allSummariesUser.get(i).createArticleSummary());
         }
         return new ResponseEntity<>(articleSummary.toString(), HttpStatus.OK);
     }
@@ -65,7 +62,7 @@ public class CassandraController {
             var uuid = UUID.randomUUID();
             uuids.add(uuid);
             articleByIdRepository.insert(article.toArticle_by_id(uuid));
-            var users = useridByLinkRepository.findAllByLink(article.getLink());
+            var users = useridByLinkRepository.findAllByLink(article.getRssLink());
             for (var user : users) {
                 articleByUserIdRepository.insert(article.toArticle_by_userId(uuid, user.getUserId()));
             }

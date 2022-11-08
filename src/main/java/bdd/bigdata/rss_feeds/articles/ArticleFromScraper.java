@@ -14,8 +14,9 @@ public class ArticleFromScraper {
     private final String description;
     private final String link;
 
-    public String getLink() {
-        return link;
+    public String getRssLink() {
+        var splitLink = link.split("/");
+        return splitLink[0] + "//" + splitLink[2];
     }
 
     public ArticleFromScraper(String id, String title, Date pubDate, String description, String link) {
