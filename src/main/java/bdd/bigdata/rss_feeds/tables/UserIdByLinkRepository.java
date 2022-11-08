@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UseridByLinkRepository extends CassandraRepository<Userid_by_link, String> {
-    List<Userid_by_link> findAllByLink(String link);
+public interface UserIdByLinkRepository extends CassandraRepository<UserId_by_link, String> {
+    List<UserId_by_link> findAllByLink(String link);
 }

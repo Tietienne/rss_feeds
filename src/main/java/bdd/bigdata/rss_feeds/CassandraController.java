@@ -22,7 +22,7 @@ public class CassandraController {
     ArticleByUserIdRepository articleByUserIdRepository;
 
     @Autowired
-    UseridByLinkRepository useridByLinkRepository;
+    UserIdByLinkRepository useridByLinkRepository;
 
     /**
      * Find an article depending on the article_id given
@@ -42,7 +42,7 @@ public class CassandraController {
      */
     @GetMapping("/articles")
     public ResponseEntity<String> findLast10ArticlesSummaries(@RequestParam String userId) {
-        var allSummariesUser = articleByUserIdRepository.findAll();
+        var allSummariesUser = articleByUserIdRepository.findAllByUserId(userId);
         List<ArticleSummary> articleSummary = new ArrayList<>();
         for (var i = 0; i < Integer.min(10, allSummariesUser.size()); i++) {
             articleSummary.add(allSummariesUser.get(i).createArticleSummary());
@@ -72,13 +72,13 @@ public class CassandraController {
 
     /**
      * Subscribe a user to a rss link
-     * @param user_id The userId to be subscribed
+     * @param userId The userId to be subscribed
      * @param rss_link The rss link to subscribe to
      * @return Message "Done"
      */
-    @GetMapping("/subscribe/{user_id}")
-    public ResponseEntity<String> subscribeUserToLink(@PathVariable String user_id, @RequestParam String rss_link) {
-        useridByLinkRepository.insert(new Userid_by_link(rss_link, user_id));
+    @GetMapping("/subscribe/{userId}")
+    public ResponseEntity<String> subscribeUserToLink(@PathVariable String userId, @RequestParam String rss_link) {
+        useridByLinkRepository.insert(new UserId_by_link(rss_link, userId));
         return new ResponseEntity<>("Done", HttpStatus.OK);
     }
 }
