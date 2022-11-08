@@ -19,7 +19,7 @@ public class Article_by_id {
     @Column
     private final String description;
     @Column
-    private final String link; //flux rss
+    private final String link;//flux rss
 
     public Article_by_id(UUID id, String title, Date pubDate, String description, String link) {
         Objects.requireNonNull(id);
