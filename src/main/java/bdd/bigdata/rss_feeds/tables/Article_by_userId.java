@@ -37,4 +37,14 @@ public class Article_by_userId {
     public ArticleSummary createArticleSummary(){
         return new ArticleSummary(id, title, pubDate);
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", userId='" + userId + '\'' +
+                ", title='" + title + '\'' +
+                ", pubDate=" + pubDate +
+                '}';
+    }
 }

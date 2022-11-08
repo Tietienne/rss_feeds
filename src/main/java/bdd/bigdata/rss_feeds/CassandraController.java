@@ -24,6 +24,12 @@ public class CassandraController {
     @Autowired
     UserIdByLinkRepository useridByLinkRepository;
 
+    private KafkaSenderService kafkaSenderService;
+
+    public CassandraController(KafkaSenderService kafkaSenderService) {
+        this.kafkaSenderService = kafkaSenderService;
+    }
+
     /**
      * Find an article depending on the article_id given
      * @param article_id The id of the article that you are looking for
@@ -61,10 +67,14 @@ public class CassandraController {
         for (var article : articles) {
             var uuid = UUID.randomUUID();
             uuids.add(uuid);
-            articleByIdRepository.insert(article.toArticle_by_id(uuid));
+            var article_by_id = article.toArticle_by_id(uuid);
+            articleByIdRepository.insert(article_by_id);
+            kafkaSenderService.sendArticle_by_id(article_by_id);
             var users = useridByLinkRepository.findAllByLink(article.getRssLink());
             for (var user : users) {
-                articleByUserIdRepository.insert(article.toArticle_by_userId(uuid, user.getUserId()));
+                var article_by_userId = article.toArticle_by_userId(uuid, user.getUserId());
+                articleByUserIdRepository.insert(article_by_userId);
+                kafkaSenderService.sendArticle_by_userId(article_by_userId);
             }
         }
         return new ResponseEntity<>("Article(s) id(s) inserted : " + uuids, HttpStatus.OK);
