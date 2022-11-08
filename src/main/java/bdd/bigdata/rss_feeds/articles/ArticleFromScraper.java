@@ -1,6 +1,7 @@
 package bdd.bigdata.rss_feeds.articles;
 
 import bdd.bigdata.rss_feeds.tables.Article_by_id;
+import bdd.bigdata.rss_feeds.tables.Article_by_userId;
 
 import java.util.Date;
 import java.util.Objects;
@@ -32,6 +33,10 @@ public class ArticleFromScraper {
 
     public Article_by_id toArticle_by_id(UUID uuid) {
         return new Article_by_id(uuid, title, pubDate, description, link);
+    }
+
+    public Article_by_userId toArticle_by_userId(UUID uuid, String userId) {
+        return new Article_by_userId(uuid, userId, title, pubDate);
     }
 
     @Override

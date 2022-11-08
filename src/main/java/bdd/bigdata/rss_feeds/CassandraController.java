@@ -33,11 +33,7 @@ public class CassandraController {
     @GetMapping("/articles/{article_id}")
     public ResponseEntity<String> findOneArticle(@PathVariable UUID article_id) {
         Optional<Article_by_id> article = articleByIdRepository.findById(article_id);
-        if (article.isPresent()) {
-            return new ResponseEntity<>(article.get().toString(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("Not Found", HttpStatus.OK);
-        }
+        return article.isPresent() ? new ResponseEntity<>(article.get().toString(), HttpStatus.OK) : new ResponseEntity<>("Not Found", HttpStatus.OK);
     }
 
     @GetMapping("/articles")
@@ -55,15 +51,19 @@ public class CassandraController {
 
     @PostMapping("/articles")
     public ResponseEntity<String> saveArticles(@RequestBody List<ArticleFromScraper> articles) {
+        ArrayList<UUID> uuids = new ArrayList<>();
         for (var article : articles) {
             var uuid = UUID.randomUUID();
+            uuids.add(uuid);
             articleByIdRepository.insert(article.toArticle_by_id(uuid));
             var links = new ArrayList<String>();
             links.add(article.getLink());
             var users = useridByLinkRepository.findAllByLink(article.getLink());
-            // TODO : for each user, insert line in Article_by_userId
+            for (var user : users) {
+                articleByUserIdRepository.insert(article.toArticle_by_userId(uuid, user.getUserId()));
+            }
         }
-        return new ResponseEntity<>("Done", HttpStatus.OK);
+        return new ResponseEntity<>("Article(s) id(s) inserted : " + uuids, HttpStatus.OK);
     }
 
     @GetMapping("/subscribe/{user_id}")
