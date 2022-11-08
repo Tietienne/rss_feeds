@@ -28,7 +28,7 @@ public class CassandraController {
     /**
      * Find an article depending on the article_id given
      * @param article_id The id of the article that you are looking for
-     * @return The article if it exists or HttpStatus not found
+     * @return The article if it exists or Not Found message
      */
     @GetMapping("/articles/{article_id}")
     public ResponseEntity<String> findOneArticle(@PathVariable UUID article_id) {
@@ -36,6 +36,11 @@ public class CassandraController {
         return article.isPresent() ? new ResponseEntity<>(article.get().toString(), HttpStatus.OK) : new ResponseEntity<>("Not Found", HttpStatus.OK);
     }
 
+    /**
+     * Find last 10 articles depending on the userId given
+     * @param userId The userId for the articles that you are looking for
+     * @return The articles summaries if they exist or an empty list
+     */
     @GetMapping("/articles")
     public ResponseEntity<String> findLast10ArticlesSummaries(@RequestParam String userId) {
         var allSummariesUser = articleByUserIdRepository.findAll();
@@ -49,6 +54,11 @@ public class CassandraController {
         return new ResponseEntity<>(articleSummary.toString(), HttpStatus.OK);
     }
 
+    /**
+     * Save articles in Article_by_id and in Article_by_userId tables
+     * @param articles The list of articles to save
+     * @return The articles ids inserted in database
+     */
     @PostMapping("/articles")
     public ResponseEntity<String> saveArticles(@RequestBody List<ArticleFromScraper> articles) {
         ArrayList<UUID> uuids = new ArrayList<>();
@@ -64,6 +74,12 @@ public class CassandraController {
         return new ResponseEntity<>("Article(s) id(s) inserted : " + uuids, HttpStatus.OK);
     }
 
+    /**
+     * Subscribe a user to a rss link
+     * @param user_id The userId to be subscribed
+     * @param rss_link The rss link to subscribe to
+     * @return Message "Done"
+     */
     @GetMapping("/subscribe/{user_id}")
     public ResponseEntity<String> subscribeUserToLink(@PathVariable String user_id, @RequestParam String rss_link) {
         useridByLinkRepository.insert(new Userid_by_link(rss_link, user_id));
