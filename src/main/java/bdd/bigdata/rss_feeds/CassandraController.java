@@ -60,8 +60,7 @@ public class CassandraController {
             articleByIdRepository.insert(article.toArticle_by_id(uuid));
             var links = new ArrayList<String>();
             links.add(article.getLink());
-            var users = useridByLinkRepository.findAllById(links); // Error on this line : TODO : fix
-            System.out.println(users.size()); // For debug
+            var users = useridByLinkRepository.findAllByLink(article.getLink());
             // TODO : for each user, insert line in Article_by_userId
         }
         return new ResponseEntity<>("Done", HttpStatus.OK);

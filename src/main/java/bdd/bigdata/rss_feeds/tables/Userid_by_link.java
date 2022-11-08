@@ -1,8 +1,8 @@
 package bdd.bigdata.rss_feeds.tables;
 
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
-import org.springframework.data.cassandra.core.mapping.Column;
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
@@ -12,7 +12,7 @@ import java.util.Objects;
 public class Userid_by_link {
     @PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private final String link;
-    @PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.CLUSTERED)
+    @PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.CLUSTERED)
     private final String userId;
 
     public String getUserId() {
