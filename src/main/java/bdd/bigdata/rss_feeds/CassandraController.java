@@ -22,7 +22,7 @@ public class CassandraController {
     ArticleByUserIdRepository articleByUserIdRepository;
 
     @Autowired
-    UseridByLinkRepository useridByLinkRepository;
+    UserIdByLinkRepository useridByLinkRepository;
 
     /**
      * Find an article depending on the article_id given
@@ -78,7 +78,7 @@ public class CassandraController {
      */
     @GetMapping("/subscribe/{user_id}")
     public ResponseEntity<String> subscribeUserToLink(@PathVariable String user_id, @RequestParam String rss_link) {
-        useridByLinkRepository.insert(new Userid_by_link(rss_link, user_id));
+        useridByLinkRepository.insert(new User_id_by_link(rss_link, user_id));
         return new ResponseEntity<>("Done", HttpStatus.OK);
     }
 }
