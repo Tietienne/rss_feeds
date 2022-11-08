@@ -37,12 +37,12 @@ public class CassandraController {
 
     /**
      * Find last 10 articles depending on the userId given
-     * @param user_id The userId for the articles that you are looking for
+     * @param userId The userId for the articles that you are looking for
      * @return The articles summaries if they exist or an empty list
      */
     @GetMapping("/articles")
-    public ResponseEntity<String> findLast10ArticlesSummaries(@RequestParam String user_id) {
-        var allSummariesUser = articleByUserIdRepository.findAllByUserId(user_id);
+    public ResponseEntity<String> findLast10ArticlesSummaries(@RequestParam String userId) {
+        var allSummariesUser = articleByUserIdRepository.findAll();
         List<ArticleSummary> articleSummary = new ArrayList<>();
         for (var i = 0; i < Integer.min(10, allSummariesUser.size()); i++) {
             articleSummary.add(allSummariesUser.get(i).createArticleSummary());
