@@ -56,8 +56,6 @@ public class CassandraController {
             var uuid = UUID.randomUUID();
             uuids.add(uuid);
             articleByIdRepository.insert(article.toArticle_by_id(uuid));
-            var links = new ArrayList<String>();
-            links.add(article.getLink());
             var users = useridByLinkRepository.findAllByLink(article.getLink());
             for (var user : users) {
                 articleByUserIdRepository.insert(article.toArticle_by_userId(uuid, user.getUserId()));
