@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux Magazine News (path: news)</title>
+    <link>http://www.linux-magazine.com/</link>
+    <description/>
+    <language>en-US</language>
+    <managingEditor>webdevel@sparkhausmedia.com (Christian Woldt)</managingEditor>
+    <pubDate>Wed, 09 Nov 2022 12:36:04 +0000</pubDate>
+    <lastBuildDate>Wed, 09 Nov 2022 12:36:04 +0000</lastBuildDate>
+    <generator>eZ Components Feed 1.3 (http://ezcomponents.org/docs/tutorials/Feed)</generator>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <atom:link href="http://www.linux-magazine.com/rss/feed/news" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>elementary OS 7 is Getting Closer to Release</title>
+      <link>http://www.linux-magazine.com/Online/News/elementary-OS-7-is-Getting-Closer-to-Release</link>
+      <description>&lt;p&gt;The team behind elementary OS has announced they are now focused on putting the finishing touches on the next major release of the Linux distribution.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Gwen Clark)</author>
+      <guid isPermaLink="false">adedede0865ed9077c0a53878706815c</guid>
+      <pubDate>Mon, 07 Nov 2022 20:02:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>Nitrux 2.5 Released with Kernel 6.0 and KDE Plasma 5.26</title>
+      <link>http://www.linux-magazine.com/Online/News/Nitrux-2.5-Released-with-Kernel-6.0-and-KDE-Plasma-5.26</link>
+      <description>&lt;p&gt;Nitrux 2.5 has been officially released and is the first systemd-free distribution to include both kernel 6.0 and KDE Plasma 5.26.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Gwen Clark)</author>
+      <guid isPermaLink="false">224790c8412c107f5637e2bcd1b747cc</guid>
+      <pubDate>Wed, 02 Nov 2022 16:14:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>Zorin OS 16.02 Now Available</title>
+      <link>http://www.linux-magazine.com/Online/News/Zorin-OS-16.02-Now-Available</link>
+      <description>&lt;p&gt;Zorin OS 16.2 has been officially released just seven months after the first point release of the user-friendly Linux operating system.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Amy Pettle)</author>
+      <guid isPermaLink="false">c7069a15c462f855a14de2ef4ce7b5f3</guid>
+      <pubDate>Mon, 31 Oct 2022 17:10:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Linus Torvalds Considers Dropping i486 Support</title>
+      <link>http://www.linux-magazine.com/Online/News/Linus-Torvalds-Considers-Dropping-i486-Support</link>
+      <description>&lt;p&gt;In a message to the Linux kernel mailing list, creator Linus Torvalds indicates that it's time to jettison support for i486 machines in with Linux kernel.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Gwen Clark)</author>
+      <guid isPermaLink="false">bd33da216d0fa66271b603cd50ff0ef8</guid>
+      <pubDate>Wed, 26 Oct 2022 15:57:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Firefox 106 Lands with Back-Forward Swipe Gesture Support</title>
+      <link>http://www.linux-magazine.com/Online/News/Firefox-106-Lands-with-Back-Forward-Swipe-Gesture-Support</link>
+      <description>&lt;p&gt;The latest release of Firefox is out, and it adds two important new features to the open source browser.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Gwen Clark)</author>
+      <guid isPermaLink="false">013b1564670ce24d14551a5e1f612095</guid>
+      <pubDate>Mon, 24 Oct 2022 18:13:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>First Release Candidate of Linux 6.1 Kernel Announced</title>
+      <link>http://www.linux-magazine.com/Online/News/First-Release-Candidate-of-Linux-6.1-Kernel-Announced</link>
+      <description>&lt;p&gt;The development cycle for the 6.1 Linux kernel is off and running with the availability of the first Release Candidate.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Gwen Clark)</author>
+      <guid isPermaLink="false">097a482c0574046a1ea5bcf6b30e080f</guid>
+      <pubDate>Wed, 19 Oct 2022 16:01:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Juno Computers Announces New Tablet for Preorder</title>
+      <link>http://www.linux-magazine.com/Online/News/Juno-Computers-Announces-New-Tablet-for-Preorder</link>
+      <description>&lt;p&gt;Juno Computers brings to market one of the first commercial Linux tablets that could be consumer-friendly and a viable option for those wanting an open source mobile device.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Amy Pettle)</author>
+      <guid isPermaLink="false">03a8006bea6b7171baa7e42328fdec65</guid>
+      <pubDate>Mon, 17 Oct 2022 18:12:38 +0000</pubDate>
+    </item>
+    <item>
+      <title>VirtualBox 7.0 Now Available for Installation</title>
+      <link>http://www.linux-magazine.com/Online/News/VirtualBox-7.0-Now-Available-for-Installation</link>
+      <description>&lt;p&gt;One of the most popular virtual machine applications for Linux has been upgraded to a major new release that offers an overhauled UI and some pretty important features.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Amy Pettle)</author>
+      <guid isPermaLink="false">44162fdcb205cd81eb11e66ae664386c</guid>
+      <pubDate>Wed, 12 Oct 2022 15:51:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>TUXEDO Computers Releases TUXEDO OS</title>
+      <link>http://www.linux-magazine.com/Online/News/TUXEDO-Computers-Releases-TUXEDO-OS</link>
+      <description>&lt;p&gt;The Linux hardware vendor TUXEDO Computers has announced the official release of its Ubuntu-based TUXEDO OS to the general public.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Amy Pettle)</author>
+      <guid isPermaLink="false">8d7e3fce8b404c63a51c1ea2a5815184</guid>
+      <pubDate>Mon, 10 Oct 2022 15:28:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Native GPU Driver for Apple Silicon Is Nearly Here</title>
+      <link>http://www.linux-magazine.com/Online/News/Native-GPU-Driver-for-Apple-Silicon-Is-Nearly-Here</link>
+      <description>&lt;p&gt;Full-blown Linux on the Apple M1 and M2 chips is almost a reality.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Gwen Clark)</author>
+      <guid isPermaLink="false">a71ce16536656c7b2efeff5edf9ab500</guid>
+      <pubDate>Wed, 05 Oct 2022 15:53:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Linux Kernel 6.0 Officially Released</title>
+      <link>http://www.linux-magazine.com/Online/News/Linux-Kernel-6.0-Officially-Released</link>
+      <description>&lt;p&gt;Although it will be some time before most Linux distributions ship with the latest kernel, the next major release is now available.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Gwen Clark)</author>
+      <guid isPermaLink="false">6fac495a5d03e9f64d34e6e3ed1c35a8</guid>
+      <pubDate>Mon, 03 Oct 2022 16:33:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>ExTiX 22.9 Released with Support for Installing Android Apps</title>
+      <link>http://www.linux-magazine.com/Online/News/ExTiX-22.9-Released-with-Support-for-Installing-Android-Apps</link>
+      <description>&lt;p&gt;The developers of the ExTiX Linux Distribution have released a new version that includes added support to make installing and using Android apps on the desktop a breeze.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Gwen Clark)</author>
+      <guid isPermaLink="false">1e26c4ead2cbb396f5b6a8c3913a7ef1</guid>
+      <pubDate>Thu, 29 Sep 2022 16:01:20 +0000</pubDate>
+    </item>
+    <item>
+      <title>System76 Skips Pop!_OS 22.10 to Focus on COSMIC Desktop</title>
+      <link>http://www.linux-magazine.com/Online/News/System76-Skips-Pop%21_OS-22.10-to-Focus-on-COSMIC-Desktop</link>
+      <description>&lt;p&gt;In a move that is sure to raise some eyebrows, System76 has chosen to concentrate on COSMIC Desktop instead of staying in step with Ubuntu releases.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Lori White)</author>
+      <guid isPermaLink="false">9c5a71b1893c29ec25b608f0a422609f</guid>
+      <pubDate>Mon, 26 Sep 2022 14:43:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>New Look for System76 Thelio</title>
+      <link>http://www.linux-magazine.com/Online/News/New-Look-for-System76-Thelio</link>
+      <description>&lt;p&gt;System76 has given their already stellar Thelio desktop computer a redesign by way of the chassis accent panel.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Amy Pettle)</author>
+      <guid isPermaLink="false">b1598865b1dcb9fb0a2f035d23c009fc</guid>
+      <pubDate>Wed, 21 Sep 2022 19:13:38 +0000</pubDate>
+    </item>
+    <item>
+      <title>Ubuntu Software Store Rumored to Replace Gnome Software</title>
+      <link>http://www.linux-magazine.com/Online/News/Ubuntu-Software-Store-Rumored-to-Replace-Gnome-Software</link>
+      <description>&lt;p&gt;An alternative to GNOME Software has been written, using Flutter, and it’s making enough noise that Canonical is rumored to be considering using it as the default.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Dena Friesen)</author>
+      <guid isPermaLink="false">372fe5900751029fa590d9a2ffb4005e</guid>
+      <pubDate>Tue, 20 Sep 2022 13:51:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>A New Arch-Based Linux Distribution Has Arrived</title>
+      <link>http://www.linux-magazine.com/Online/News/A-New-Arch-Based-Linux-Distribution-Has-Arrived</link>
+      <description>&lt;p&gt;Crystal Linux is a new distribution with the goal of bringing the power of Arch Linux to the masses.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Lori White)</author>
+      <guid isPermaLink="false">0c899d4584c4ff90997e38c42323814d</guid>
+      <pubDate>Wed, 14 Sep 2022 16:12:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Fedora 37 Beta Available</title>
+      <link>http://www.linux-magazine.com/Online/News/Fedora-37-Beta-Available</link>
+      <description>&lt;p&gt;The Fedora development team announced the beta for version 37 of the open-source operating system would be released on time on September 13, 2022.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Lori White)</author>
+      <guid isPermaLink="false">1b47f97c18bb3918348865bf0b667a88</guid>
+      <pubDate>Mon, 12 Sep 2022 15:59:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>Salix 15.0 Offers Updates and a Modernized Look</title>
+      <link>http://www.linux-magazine.com/Online/News/Salix-15.0-Offers-Updates-and-a-Modernized-Look</link>
+      <description>&lt;p&gt;Salix is a Slackware-based Linux distribution with a new look and a goal of being fast, user-friendly, and highly stable.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Amy Pettle)</author>
+      <guid isPermaLink="false">1626d0ba5ac718106681376bb763165a</guid>
+      <pubDate>Wed, 07 Sep 2022 16:02:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>Ubuntu 20.04.5 LTS Release Now Available</title>
+      <link>http://www.linux-magazine.com/Online/News/Ubuntu-20.04.5-LTS-Release-Now-Available</link>
+      <description>&lt;p&gt;The latest point release of the Ubuntu 20.04 LTS distribution is now available and sports kernel 5.15.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Lori White)</author>
+      <guid isPermaLink="false">0613fbf94b3bcf6cccf245490d454c02</guid>
+      <pubDate>Tue, 06 Sep 2022 17:46:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>MX Linux 21.2 Offers Improvements and Bug Fixes </title>
+      <link>http://www.linux-magazine.com/Online/News/MX-Linux-21.2-Offers-Improvements-and-Bug-Fixes</link>
+      <description>&lt;p&gt;MX Linux 21.2, aka “Wildflower,” is now officially available and is the second refresh of the MX-21 release.&lt;/p&gt;</description>
+      <author>webdevel@sparkhausmedia.com (Amy Pettle)</author>
+      <guid isPermaLink="false">c0ed5da959125dc6f76fad8d8c9ee601</guid>
+      <pubDate>Wed, 31 Aug 2022 16:31:16 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
