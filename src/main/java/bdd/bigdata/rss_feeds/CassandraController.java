@@ -69,12 +69,12 @@ public class CassandraController {
             uuids.add(uuid);
             var article_by_id = article.toArticle_by_id(uuid);
             articleByIdRepository.insert(article_by_id);
-            kafkaSenderService.sendArticle_by_id(article_by_id);
+            //kafkaSenderService.sendArticle_by_id(article_by_id); //Methode to send a message to kafka, commented because kafka is not totally implemented
             var users = useridByLinkRepository.findAllByLink(article.getRssLink());
             for (var user : users) {
                 var article_by_userId = article.toArticle_by_userId(uuid, user.getUserId());
                 articleByUserIdRepository.insert(article_by_userId);
-                kafkaSenderService.sendArticle_by_userId(article_by_userId);
+                //kafkaSenderService.sendArticle_by_userId(article_by_userId); //Methode to send a message to kafka, commented because kafka is not totally implemented
             }
         }
         return new ResponseEntity<>("Article(s) id(s) inserted : " + uuids, HttpStatus.OK);
